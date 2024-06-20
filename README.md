@@ -362,7 +362,7 @@ spec:
 ```
 
 
-STEP 7:
+## STEP 7:
 
 Create cert-manager for creating and renewing certificates for our app
 
