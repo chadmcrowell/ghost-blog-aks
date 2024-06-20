@@ -404,6 +404,7 @@ openssl req -x509 -new -nodes -key ca.key -sha256 -subj "/CN=atxlinux.com" -days
 # create secret in ghost namespace
 kubectl create secret tls atx-tls --key=ca.key --cert=ca.crt -n ghost
 ```
+> NOTE: Ensure that /etc/ssl/openssl.cnf is a valid path to your OpenSSL configuration file (openssl.cnf), which should define the v3_ca extension and any other necessary settings specific to your CA certificate requirements.
 
 ## STEP 8:
 
