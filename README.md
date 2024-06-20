@@ -406,6 +406,15 @@ kubectl create secret tls atx-tls --key=ca.key --cert=ca.crt -n ghost
 ```
 > NOTE: Ensure that /etc/ssl/openssl.cnf is a valid path to your OpenSSL configuration file (openssl.cnf), which should define the v3_ca extension and any other necessary settings specific to your CA certificate requirements.
 
+Here’s an example of how the [ v3_ca ] section might look in your openssl.cnf file:
+```conf
+[ v3_ca ]
+basicConstraints = CA:TRUE
+keyUsage = critical, digitalSignature, keyCertSign
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer:always
+```
+
 ## STEP 8:
 
 Create nginx ingress resource
